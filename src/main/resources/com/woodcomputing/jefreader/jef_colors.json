@@ -1,0 +1,470 @@
+[
+    {
+      "code": "1",
+      "rgb": "#000000",
+      "number": "002",
+      "name": "Black"
+    },
+    {
+      "code": "2",
+      "rgb": "#F0F0F0",
+      "number": "001",
+      "name": "White"
+    },
+    {
+      "code": "3",
+      "rgb": "#FFCC00",
+      "number": "239",
+      "name": "Sunflower"
+    },
+    {
+      "code": "4",
+      "rgb": "#E6651E",
+      "number": "254",
+      "name": "Hazel"
+    },
+    {
+      "code": "5",
+      "rgb": "#C4E39D",
+      "number": "264",
+      "name": "Green"
+    },
+    {
+      "code": "6",
+      "rgb": "#237336",
+      "number": "226",
+      "name": "Green"
+    },
+    {
+      "code": "7",
+      "rgb": "#071650",
+      "number": "232",
+      "name": "Navy"
+    },
+    {
+      "code": "8",
+      "rgb": "#4CB58F",
+      "number": "250",
+      "name": "Emerald"
+    },
+    {
+      "code": "9",
+      "rgb": "#F669A0",
+      "number": "201",
+      "name": "Pink"
+    },
+    {
+      "code": "10",
+      "rgb": "#FF4720",
+      "number": "202",
+      "name": "Vermilion"
+    },
+    {
+      "code": "11",
+      "rgb": "#E2A188",
+      "number": "236",
+      "name": "Cinnamon"
+    },
+    {
+      "code": "12",
+      "rgb": "#595B61",
+      "number": "252",
+      "name": "Dark"
+    },
+    {
+      "code": "13",
+      "rgb": "#E4C35D",
+      "number": "003",
+      "name": "Gold"
+    },
+    {
+      "code": "14",
+      "rgb": "#6231BD",
+      "number": "261",
+      "name": "Violet"
+    },
+    {
+      "code": "15",
+      "rgb": "#2F5933",
+      "number": "219",
+      "name": "Olive"
+    },
+    {
+      "code": "16",
+      "rgb": "#FAB381",
+      "number": "212",
+      "name": "Peach"
+    },
+    {
+      "code": "17",
+      "rgb": "#F999B7",
+      "number": "211",
+      "name": "Pale"
+    },
+    {
+      "code": "18",
+      "rgb": "#F09C96",
+      "number": "256",
+      "name": "Salmon"
+    },
+    {
+      "code": "19",
+      "rgb": "#A39166",
+      "number": "268",
+      "name": "Olive"
+    },
+    {
+      "code": "20",
+      "rgb": "#970533",
+      "number": "215",
+      "name": "Wine"
+    },
+    {
+      "code": "21",
+      "rgb": "#AC9CC7",
+      "number": "209",
+      "name": "Pale"
+    },
+    {
+      "code": "22",
+      "rgb": "#65C2C8",
+      "number": "217",
+      "name": "Sky"
+    },
+    {
+      "code": "23",
+      "rgb": "#E5E5E5",
+      "number": "220",
+      "name": "Silver"
+    },
+    {
+      "code": "24",
+      "rgb": "#A0B8CC",
+      "number": "216",
+      "name": "Pale"
+    },
+    {
+      "code": "25",
+      "rgb": "#98D6BD",
+      "number": "227",
+      "name": "Pale"
+    },
+    {
+      "code": "26",
+      "rgb": "#0B2F84",
+      "number": "207",
+      "name": "Blue"
+    },
+    {
+      "code": "27",
+      "rgb": "#98F3FE",
+      "number": "229",
+      "name": "Powder"
+    },
+    {
+      "code": "28",
+      "rgb": "#B2E1E3",
+      "number": "228",
+      "name": "Baby"
+    },
+    {
+      "code": "29",
+      "rgb": "#FF0927",
+      "number": "244",
+      "name": "Cardinal"
+    },
+    {
+      "code": "30",
+      "rgb": "#14329C",
+      "number": "262",
+      "name": "Blue"
+    },
+    {
+      "code": "31",
+      "rgb": "#A80043",
+      "number": "242",
+      "name": "Burgundy"
+    },
+    {
+      "code": "32",
+      "rgb": "#FF6600",
+      "number": "203",
+      "name": "Orange"
+    },
+    {
+      "code": "33",
+      "rgb": "#FF6048",
+      "number": "234",
+      "name": "Coral"
+    },
+    {
+      "code": "34",
+      "rgb": "#B59474",
+      "number": "237",
+      "name": "Umber"
+    },
+    {
+      "code": "35",
+      "rgb": "#FDF5B5",
+      "number": "210",
+      "name": "Pale"
+    },
+    {
+      "code": "36",
+      "rgb": "#F5DB8B",
+      "number": "238",
+      "name": "Blond"
+    },
+    {
+      "code": "37",
+      "rgb": "#C79732",
+      "number": "272",
+      "name": "Old"
+    },
+    {
+      "code": "38",
+      "rgb": "#889B9B",
+      "number": "221",
+      "name": "Gray"
+    },
+    {
+      "code": "39",
+      "rgb": "#AB5A96",
+      "number": "208",
+      "name": "Purple"
+    },
+    {
+      "code": "40",
+      "rgb": "#FFBDE3",
+      "number": "240",
+      "name": "Orchid"
+    },
+    {
+      "code": "41",
+      "rgb": "#C3007E",
+      "number": "241",
+      "name": "Peony"
+    },
+    {
+      "code": "42",
+      "rgb": "#FF0000",
+      "number": "225",
+      "name": "Red"
+    },
+    {
+      "code": "43",
+      "rgb": "#EE71AF",
+      "number": "266",
+      "name": "Floral"
+    },
+    {
+      "code": "44",
+      "rgb": "#608541",
+      "number": "246",
+      "name": "Moss"
+    },
+    {
+      "code": "45",
+      "rgb": "#609418",
+      "number": "247",
+      "name": "Meadow"
+    },
+    {
+      "code": "46",
+      "rgb": "#C6EECB",
+      "number": "245",
+      "name": "Opal"
+    },
+    {
+      "code": "47",
+      "rgb": "#5BD2B5",
+      "number": "249",
+      "name": "Aquamarine"
+    },
+    {
+      "code": "48",
+      "rgb": "#FFFF17",
+      "number": "204",
+      "name": "Yellow"
+    },
+    {
+      "code": "49",
+      "rgb": "#04917B",
+      "number": "251",
+      "name": "Peacock"
+    },
+    {
+      "code": "50",
+      "rgb": "#5C2625",
+      "number": "260",
+      "name": "Dark"
+    },
+    {
+      "code": "51",
+      "rgb": "#FFFFDC",
+      "number": "253",
+      "name": "Ivory"
+    },
+    {
+      "code": "52",
+      "rgb": "#FF5A27",
+      "number": "235",
+      "name": "Burnt"
+    },
+    {
+      "code": "53",
+      "rgb": "#A76C3D",
+      "number": "257",
+      "name": "Cocoa"
+    },
+    {
+      "code": "54",
+      "rgb": "#9C6445",
+      "number": "214",
+      "name": "Brown"
+    },
+    {
+      "code": "55",
+      "rgb": "#B45A30",
+      "number": "258",
+      "name": "Sienna"
+    },
+    {
+      "code": "56",
+      "rgb": "#481A05",
+      "number": "205",
+      "name": "Dark"
+    },
+    {
+      "code": "57",
+      "rgb": "#0C8918",
+      "number": "269",
+      "name": "Meadow"
+    },
+    {
+      "code": "58",
+      "rgb": "#70A9E2",
+      "number": "230",
+      "name": "Bright"
+    },
+    {
+      "code": "59",
+      "rgb": "#1D5478",
+      "number": "231",
+      "name": "Slate"
+    },
+    {
+      "code": "60",
+      "rgb": "#165FA7",
+      "number": "263",
+      "name": "Solar"
+    },
+    {
+      "code": "61",
+      "rgb": "#7FC21C",
+      "number": "218",
+      "name": "Yellow"
+    },
+    {
+      "code": "62",
+      "rgb": "#06480D",
+      "number": "248",
+      "name": "Dark"
+    },
+    {
+      "code": "63",
+      "rgb": "#843154",
+      "number": "267",
+      "name": "Wine"
+    },
+    {
+      "code": "64",
+      "rgb": "#FD33A3",
+      "number": "265",
+      "name": "Crimson"
+    },
+    {
+      "code": "65",
+      "rgb": "#FFBBBB",
+      "number": "233",
+      "name": "Salmon"
+    },
+    {
+      "code": "66",
+      "rgb": "#F7F297",
+      "number": "270",
+      "name": "Mustard"
+    },
+    {
+      "code": "67",
+      "rgb": "#00B552",
+      "number": "206",
+      "name": "Bright"
+    },
+    {
+      "code": "68",
+      "rgb": "#FCF121",
+      "number": "275",
+      "name": "Canary"
+    },
+    {
+      "code": "69",
+      "rgb": "#E6965A",
+      "number": "255",
+      "name": "Toast"
+    },
+    {
+      "code": "70",
+      "rgb": "#D7BDA4",
+      "number": "213",
+      "name": "Beige"
+    },
+    {
+      "code": "71",
+      "rgb": "#FF9D00",
+      "number": "273",
+      "name": "Honey"
+    },
+    {
+      "code": "72",
+      "rgb": "#FFBA5E",
+      "number": "274",
+      "name": "Tangerine"
+    },
+    {
+      "code": "73",
+      "rgb": "#0257B5",
+      "number": "222",
+      "name": "Ocean"
+    },
+    {
+      "code": "74",
+      "rgb": "#6E3937",
+      "number": "259",
+      "name": "Sepia"
+    },
+    {
+      "code": "75",
+      "rgb": "#540571",
+      "number": "243",
+      "name": "Royal"
+    },
+    {
+      "code": "76",
+      "rgb": "#CC9900",
+      "number": "271",
+      "name": "Yellow"
+    },
+    {
+      "code": "77",
+      "rgb": "#D0BAB0",
+      "number": "223",
+      "name": "Beige"
+    },
+    {
+      "code": "78",
+      "rgb": "#E3BE81",
+      "number": "224",
+      "name": "Bamboo"
+    }
+]
