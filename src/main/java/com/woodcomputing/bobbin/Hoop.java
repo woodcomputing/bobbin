@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.woodcomputing.jefreader;
+package com.woodcomputing.bobbin;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

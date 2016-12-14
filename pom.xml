@@ -2,8 +2,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.woodcomputing</groupId>
-    <artifactId>jefreader</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>bobbin</artifactId>
+    <version>0.1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     
     <properties>
@@ -14,27 +14,13 @@
     
     <build>
         <plugins>
-            
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>3.0.2</version>
-                <configuration>
-                    <archive>
-                        <manifest>
-                            <addClasspath>true</addClasspath>
-                            <mainClass>com.woodcomputing.jefreader.JEFReader</mainClass>
-                        </manifest>
-                    </archive>
-                </configuration>
-            </plugin>
 
             <plugin>
                 <groupId>com.zenjava</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>8.7.0</version>
                 <configuration>
-                    <mainClass>com.woodcomputing.jefreader.JEFReader</mainClass>
+                    <mainClass>com.woodcomputing.bobbin.Bobbin</mainClass>
                     <allPermissions>true</allPermissions>
                     <needShortcut>true</needShortcut>
                     <needMenu>true</needMenu>
@@ -95,7 +81,43 @@
             <artifactId>jackson-annotations</artifactId>
             <version>2.8.5</version>
         </dependency>
+
+<!--        <dependency>
+            <groupId>org.apache.xmlgraphics</groupId>
+            <artifactId>batik-swing</artifactId>
+            <version>1.8</version>
+        </dependency>
         
+        <dependency>
+            <groupId>org.apache.xmlgraphics</groupId>
+            <artifactId>batik-dom</artifactId>
+            <version>1.8</version>
+        </dependency> 
+
+        <dependency>
+            <groupId>org.apache.xmlgraphics</groupId>
+            <artifactId>xmlgraphics-commons</artifactId>
+            <version>2.1</version>
+        </dependency>-->
+
+        <dependency>
+    <groupId>org.codeartisans.thirdparties.swing</groupId>
+    <artifactId>batik-all</artifactId>
+    <version>1.8pre-r1084380</version>
+</dependency>
+        
+        <dependency>
+            <groupId>com.google.inject</groupId>
+            <artifactId>guice</artifactId>
+            <version>4.1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.inject.extensions</groupId>
+            <artifactId>guice-assistedinject</artifactId>
+            <version>4.1.0</version>
+        </dependency>
+                
     </dependencies>
 
 </project>
