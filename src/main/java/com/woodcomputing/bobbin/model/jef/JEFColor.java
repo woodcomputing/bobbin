@@ -1,9 +1,9 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * FXSlang
+ * Copyright 2016 Jonathan Wood
+ * Licensed under the Apache License, Version 2.0
  */
-package com.woodcomputing.bobbin;
+package com.woodcomputing.bobbin.model.jef;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,7 +11,8 @@ import lombok.Setter;
 
 /**
  *
- * @author jwood
+ * @author Jonathan Wood
+ * 
  */
 @Getter
 @Setter

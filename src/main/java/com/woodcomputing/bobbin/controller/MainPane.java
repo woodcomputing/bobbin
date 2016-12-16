@@ -1,36 +1,27 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * FXSlang
+ * Copyright 2016 Jonathan Wood
+ * Licensed under the Apache License, Version 2.0
  */
 package com.woodcomputing.bobbin.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.inject.Inject;
-import com.woodcomputing.bobbin.Hoop;
-import com.woodcomputing.bobbin.JEF;
-import com.woodcomputing.bobbin.JEFColor;
+import com.woodcomputing.bobbin.model.jef.Hoop;
+import com.woodcomputing.bobbin.model.jef.JEF;
+import com.woodcomputing.bobbin.model.jef.JEFColor;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.StringWriter;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.embed.swing.SwingNode;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.StackPane;
 import javax.swing.SwingUtilities;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerConfigurationException;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
 import lombok.extern.log4j.Log4j2;
 import org.apache.batik.dom.svg.SVGDOMImplementation;
 import org.apache.batik.swing.JSVGCanvas;
@@ -45,7 +36,8 @@ import org.w3c.dom.svg.SVGDocument;
 
 /**
  *
- * @author jwood
+ * @author Jonathan Wood
+ * 
  */
 @Log4j2
 public class MainPane extends StackPane {
@@ -54,7 +46,6 @@ public class MainPane extends StackPane {
     
     private final JSVGCanvas svgCanvas;
     private RunnableQueue queue;
-    private static final String SVG_NS = SVGDOMImplementation.SVG_NAMESPACE_URI;
     private Document doc;
     
     @Inject
@@ -88,6 +79,10 @@ public class MainPane extends StackPane {
         SwingUtilities.invokeLater(() -> {
             swingNode.setContent(svgCanvas);
         });
+    }
+    
+    private void readPES() {
+        
     }
     
     private void readJEF() {
@@ -147,6 +142,7 @@ public class MainPane extends StackPane {
             log.debug("Pen Color changed to: {} ({})", color.getRgb(), color.getName());
             int stitches = 0;
             final Element svgRoot = doc.getDocumentElement();
+            svgRoot.setAttributeNS(null, "viewBox", "-600 -400 1200 800");
             StringBuilder path = new StringBuilder();
 
             for (int stitch = 1; stitch < jef.getStitchCount(); stitch++) {
@@ -183,9 +179,9 @@ public class MainPane extends StackPane {
                         isMove = false;
                     } else {
                         stitches++;
-                    log.trace("cx {} cy {} nx {} ny {}", cx, cy, nx, ny);
-                    path.append("M").append(cx).append(" ").append(-cy).append(" ");
-                    path.append("L").append(nx).append(" ").append(-ny).append(" ");
+                        log.trace("cx {} cy {} nx {} ny {}", cx, cy, nx, ny);
+                        path.append("M").append(cx/2).append(" ").append(-cy/4).append(" ");
+                        path.append("L").append(nx/2).append(" ").append(-ny/4).append(" ");
                     }
                     cx = nx;
                     cy = ny;
@@ -194,18 +190,18 @@ public class MainPane extends StackPane {
             log.debug("Changes: {} Stitches {}", change, stitches);
         });
 
-        DOMSource domSource = new DOMSource(doc);
-        StringWriter writer = new StringWriter();
-        StreamResult result = new StreamResult(writer);
-        TransformerFactory tf = TransformerFactory.newInstance();
-        Transformer transformer;
-        try {
-            transformer = tf.newTransformer();
-            transformer.transform(domSource, result);
-        } catch (TransformerException ex) {
-            log.catching(ex);
-        }
-        String dom = writer.toString();
-        log.debug(dom);
+//        DOMSource domSource = new DOMSource(doc);
+//        StringWriter writer = new StringWriter();
+//        StreamResult result = new StreamResult(writer);
+//        TransformerFactory tf = TransformerFactory.newInstance();
+//        Transformer transformer;
+//        try {
+//            transformer = tf.newTransformer();
+//            transformer.transform(domSource, result);
+//        } catch (TransformerException ex) {
+//            log.catching(ex);
+//        }
+//        String dom = writer.toString();
+//        log.debug(dom);
     }
 }

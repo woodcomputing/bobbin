@@ -1,10 +1,13 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * FXSlang
+ * Copyright 2016 Jonathan Wood
+ * Licensed under the Apache License, Version 2.0
  */
 package com.woodcomputing.bobbin;
 
+import com.woodcomputing.bobbin.model.jef.JEFColor;
+import com.woodcomputing.bobbin.model.jef.Hoop;
+import com.woodcomputing.bobbin.model.jef.JEF;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
@@ -27,7 +30,8 @@ import org.apache.commons.io.IOUtils;
 
 /**
  *
- * @author jwood
+ * @author Jonathan Wood
+ * 
  */
 @Log4j2
 public class Bobbin extends Application {
