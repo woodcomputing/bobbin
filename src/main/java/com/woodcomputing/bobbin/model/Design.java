@@ -5,6 +5,7 @@
  */
 package com.woodcomputing.bobbin.model;
 
+import java.util.ArrayList;
 import java.util.List;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,7 +19,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Stitches {
+public class Design {
     private String name;
-    private List<ThreadChange> threadChanges;
+    private List<StitchGroup> stitchGroups = new ArrayList<>();
 }

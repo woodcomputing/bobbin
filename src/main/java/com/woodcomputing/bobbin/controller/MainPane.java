@@ -7,6 +7,9 @@ package com.woodcomputing.bobbin.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.inject.Inject;
+import com.woodcomputing.bobbin.model.Design;
+import com.woodcomputing.bobbin.model.Stitch;
+import com.woodcomputing.bobbin.model.StitchGroup;
 import com.woodcomputing.bobbin.model.jef.Hoop;
 import com.woodcomputing.bobbin.model.jef.JEF;
 import com.woodcomputing.bobbin.model.jef.JEFColor;
@@ -145,6 +148,10 @@ public class MainPane extends StackPane {
             final Element svgRoot = doc.getDocumentElement();
             svgRoot.setAttributeNS(null, "viewBox", "-600 -400 1200 800");
             StringBuilder path = new StringBuilder();
+            
+            Design design = new Design();
+            StitchGroup stitchGroup = new StitchGroup();
+            stitchGroup.setColor(color.getRgb());
 
             for (int stitch = 1; stitch < jef.getStitchCount(); stitch++) {
                 dx = bb.get();
@@ -164,6 +171,8 @@ public class MainPane extends StackPane {
                             group = svgCanvas.getSVGDocument().createElementNS(SVGDOMImplementation.SVG_NAMESPACE_URI, SVGConstants.SVG_G_TAG);
                             element = svgCanvas.getSVGDocument().createElementNS(SVGDOMImplementation.SVG_NAMESPACE_URI, SVGConstants.SVG_PATH_TAG);
                             path = new StringBuilder();
+                            design.getStitchGroups().add(stitchGroup);
+                            stitchGroup = new StitchGroup();
                             log.debug("Pen Color changed to: {} ({})", color.getRgb(), color.getName());
                             break;
                         case 2:
@@ -182,9 +191,12 @@ public class MainPane extends StackPane {
                         isMove = false;
                     } else {
                         stitches++;
+                        Stitch designStitch = new Stitch(cx, -cy, nx, -ny);
+                        stitchGroup.getStitches().add(designStitch);
                         log.trace("cx {} cy {} nx {} ny {}", cx, cy, nx, ny);
-                        path.append("M").append(cx/2).append(" ").append(-cy/4).append(" ");
-                        path.append("L").append(nx/2).append(" ").append(-ny/4).append(" ");
+                        path.append("M").append(cx/4).append(" ").append(-cy/4).append(" ");
+                        path.append("L").append(nx/4).append(" ").append(-ny/4).append(" ");
+                        
                     }
                     cx = nx;
                     cy = ny;
