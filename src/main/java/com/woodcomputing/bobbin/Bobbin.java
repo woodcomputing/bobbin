@@ -138,8 +138,6 @@ public class Bobbin extends Application {
                 } else {
                     stitches++;
                     log.debug("cx {} cy {} nx {} ny {}", cx, cy, nx, ny);
-//                    gc.moveTo(cx + width/2, -cy + height/2);
-//                    gc.lineTo(nx + width/2, -ny + height/2);
                     gc.strokeLine(cx + width / 4, -cy + height / 4, nx + width / 4, -ny + height / 4);
                 }
                 cx = nx;
