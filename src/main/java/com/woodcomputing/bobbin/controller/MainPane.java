@@ -138,6 +138,7 @@ public class MainPane extends StackPane {
             boolean isMove = false;
             bb.position(jef.getFirstStitchLocation());
             JEFColor color = jef.getThreadColors()[change - 1];
+            Element group = svgCanvas.getSVGDocument().createElementNS(SVGDOMImplementation.SVG_NAMESPACE_URI, SVGConstants.SVG_G_TAG);
             Element element = svgCanvas.getSVGDocument().createElementNS(SVGDOMImplementation.SVG_NAMESPACE_URI, SVGConstants.SVG_PATH_TAG);
             log.debug("Pen Color changed to: {} ({})", color.getRgb(), color.getName());
             int stitches = 0;
@@ -158,7 +159,9 @@ public class MainPane extends StackPane {
                             String d = path.toString().trim();
                             log.debug("Path: {}", d);
                             element.setAttribute("d", d);
-                            svgRoot.appendChild(element);
+                            group.appendChild(element);
+                            svgRoot.appendChild(group);
+                            group = svgCanvas.getSVGDocument().createElementNS(SVGDOMImplementation.SVG_NAMESPACE_URI, SVGConstants.SVG_G_TAG);
                             element = svgCanvas.getSVGDocument().createElementNS(SVGDOMImplementation.SVG_NAMESPACE_URI, SVGConstants.SVG_PATH_TAG);
                             path = new StringBuilder();
                             log.debug("Pen Color changed to: {} ({})", color.getRgb(), color.getName());
