@@ -4,6 +4,7 @@ jdk:
 before_install:
   - sudo apt-get update
   - sudo apt-get install --only-upgrade -y oracle-java8-installer
+script: "mvn cobertura:cobertura"
 after_success:
   - python <(curl -s https://raw.githubusercontent.com/TouK/sputnik-ci/master/sputnik-ci.py)
   - bash <(curl -s https://codecov.io/bash)
