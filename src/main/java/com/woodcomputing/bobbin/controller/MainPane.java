@@ -107,8 +107,9 @@ public class MainPane extends StackPane {
                     path.append("M").append(stitch.getStartX() / 4).append(" ").append(stitch.getStarty() / 4).append(" ");
                     path.append("L").append(stitch.getEndX() / 4).append(" ").append(stitch.getEndY() / 4).append(" ");
                 }
-                element.setAttribute("style", "stroke:" + stitchGroup.getColor() + ";stroke-width: .25;");
-                element.setAttribute("d", path.toString().trim());
+                element.setAttributeNS(null, "stroke", stitchGroup.getColor());
+                element.setAttributeNS(null, "stroke-width", ".25");
+                element.setAttributeNS(null, "d", path.toString().trim());
 
                 group.appendChild(element);
                 designGroup.appendChild(group);
