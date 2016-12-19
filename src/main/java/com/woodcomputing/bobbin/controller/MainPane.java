@@ -1,11 +1,12 @@
 /*
- * FXSlang
+ * Bobbin
  * Copyright 2016 Jonathan Wood
  * Licensed under the Apache License, Version 2.0
  */
 package com.woodcomputing.bobbin.controller;
 
 import com.google.inject.Inject;
+import com.woodcomputing.bobbin.format.jef.JEFFormat;
 import com.woodcomputing.bobbin.model.Design;
 import com.woodcomputing.bobbin.model.Stitch;
 import com.woodcomputing.bobbin.model.StitchGroup;
@@ -64,6 +65,9 @@ public class MainPane extends StackPane {
                 queue = svgCanvas.getUpdateManager().getUpdateRunnableQueue();
                 Document doc = svgCanvas.getSVGDocument();
                 designs = doc.getElementById("designs");
+                JEFFormat jef = new JEFFormat();
+                Design design = jef.readJEF();
+                renderDesign(design);
             }
         });
         URL url = getClass().getResource("/com/woodcomputing/bobbin/controller/template.svg");

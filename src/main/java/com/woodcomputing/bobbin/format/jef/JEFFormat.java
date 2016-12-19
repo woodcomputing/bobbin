@@ -1,7 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Bobbin
+ * Copyright 2016 Jonathan Wood
+ * Licensed under the Apache License, Version 2.0
  */
 package com.woodcomputing.bobbin.format.jef;
 
@@ -24,10 +24,11 @@ import org.apache.commons.io.IOUtils;
 
 /**
  *
- * @author jwood
+ * @author Jonathan Wood
+ * 
  */
 @Log4j2
-public class JEFReader {
+public class JEFFormat {
 
     public Design readJEF() {
         List<JEFColor> jefColors = null;
@@ -92,15 +93,17 @@ public class JEFReader {
             if (dx == -128) {
                 switch (dy) {
                     case 1:
-                        log.debug("change");
+                        log.debug("change: {}", bb.position());
                         change++;
                         color = jef.getThreadColors()[change - 1];
                         design.getStitchGroups().add(stitchGroup);
                         stitchGroup = new StitchGroup();
                         stitchGroup.setColor(color.getRgb());
-                        break;
+//                        bb.get();
+//                        bb.get();
+                        continue;
                     case 2:
-                        log.debug("move");
+//                        log.debug("move");
                         isMove = true;
                         break;
                     case 16:
@@ -113,16 +116,18 @@ public class JEFReader {
                 ny = cy + dy;
                 if (isMove) {
                     isMove = false;
-                } else {
+                } 
+//                } else {
+//                    log.debug("stitch");
                     stitches++;
                     Stitch designStitch = new Stitch(cx, -cy, nx, -ny);
                     stitchGroup.getStitches().add(designStitch);
-                }
+//                }
                 cx = nx;
                 cy = ny;
             }
         }
-        log.debug("Changes: {} Stitches {}", change, stitches);
+        log.debug("Changes: {} Stitches {} End: {}", change, stitches, bb.position());
         return design;
     }
 
