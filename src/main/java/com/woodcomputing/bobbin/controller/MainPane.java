@@ -6,6 +6,7 @@
 package com.woodcomputing.bobbin.controller;
 
 import com.google.inject.Inject;
+import com.woodcomputing.bobbin.format.BobbinFormat;
 import com.woodcomputing.bobbin.format.jef.JEFFormat;
 import com.woodcomputing.bobbin.model.Design;
 import com.woodcomputing.bobbin.model.Stitch;
@@ -84,7 +85,7 @@ public class MainPane extends StackPane {
             chooser.setTitle("Open Design File");
             File selectedFile = chooser.showOpenDialog(this.getScene().getWindow());
             if(selectedFile != null) {
-                Design design = JEFFormat.load(selectedFile);
+                Design design = BobbinFormat.loadDesign(selectedFile);
                 renderDesign(design);
             }
         });

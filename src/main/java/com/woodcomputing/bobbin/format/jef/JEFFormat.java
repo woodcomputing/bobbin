@@ -22,7 +22,6 @@ import java.nio.ByteOrder;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import lombok.experimental.UtilityClass;
 import lombok.extern.log4j.Log4j2;
 import org.apache.commons.io.IOUtils;
 
@@ -32,8 +31,7 @@ import org.apache.commons.io.IOUtils;
  * 
  */
 @Log4j2
-@UtilityClass
-public class JEFFormat {
+public class JEFFormat extends BobbinFormat {
 
     private static List<JEFColor> jefColors;
     private static final Map<Integer, JEFColor> jefColorMap = new HashMap<>();
@@ -49,6 +47,7 @@ public class JEFFormat {
         }
     }
 
+    @Override
     public Design load(File file) {
 
         byte[] bytes = null;
@@ -137,6 +136,11 @@ public class JEFFormat {
         }
         log.debug("Changes: {} Stitches {} End: {}", change, stitches, bb.position());
         return design;
+    }
+
+    @Override
+    public void save(Design design) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
