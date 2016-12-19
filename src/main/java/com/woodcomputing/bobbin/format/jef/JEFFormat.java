@@ -6,12 +6,15 @@
 package com.woodcomputing.bobbin.format.jef;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.woodcomputing.bobbin.format.BobbinFormat;
 import com.woodcomputing.bobbin.model.Design;
 import com.woodcomputing.bobbin.model.Stitch;
 import com.woodcomputing.bobbin.model.StitchGroup;
 import com.woodcomputing.bobbin.model.jef.Hoop;
 import com.woodcomputing.bobbin.model.jef.JEF;
 import com.woodcomputing.bobbin.model.jef.JEFColor;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
@@ -19,6 +22,7 @@ import java.nio.ByteOrder;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import lombok.experimental.UtilityClass;
 import lombok.extern.log4j.Log4j2;
 import org.apache.commons.io.IOUtils;
 
@@ -28,23 +32,27 @@ import org.apache.commons.io.IOUtils;
  * 
  */
 @Log4j2
+@UtilityClass
 public class JEFFormat {
 
-    public Design readJEF() {
-        List<JEFColor> jefColors = null;
+    private static List<JEFColor> jefColors;
+    private static final Map<Integer, JEFColor> jefColorMap = new HashMap<>();
+    static {
         ObjectMapper mapper = new ObjectMapper();
-        try (InputStream is = getClass().getResourceAsStream("jef_colors.json")) {
+        try (InputStream is = JEFFormat.class.getResourceAsStream("jef_colors.json")) {
             jefColors = mapper.readValue(is, mapper.getTypeFactory().constructCollectionType(List.class, JEFColor.class));
         } catch (IOException ex) {
             log.catching(ex);
         }
-        Map<Integer, JEFColor> jefColorMap = new HashMap<>();
         for (JEFColor jc : jefColors) {
             jefColorMap.put(jc.getCode(), jc);
         }
+    }
+
+    public Design load(File file) {
 
         byte[] bytes = null;
-        try (InputStream is = getClass().getResourceAsStream("poppi.jef")) {
+        try (InputStream is = new FileInputStream(file)) {
             bytes = IOUtils.toByteArray(is);
         } catch (IOException ex) {
             log.catching(ex);

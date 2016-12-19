@@ -10,12 +10,15 @@ import com.woodcomputing.bobbin.format.jef.JEFFormat;
 import com.woodcomputing.bobbin.model.Design;
 import com.woodcomputing.bobbin.model.Stitch;
 import com.woodcomputing.bobbin.model.StitchGroup;
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import javafx.embed.swing.SwingNode;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.MenuItem;
 import javafx.scene.layout.StackPane;
+import javafx.stage.FileChooser;
 import javax.swing.SwingUtilities;
 import lombok.extern.log4j.Log4j2;
 import org.apache.batik.dom.svg.SVGDOMImplementation;
@@ -36,6 +39,8 @@ import org.w3c.dom.Element;
 public class MainPane extends StackPane {
     
     @FXML SwingNode swingNode;
+    @FXML MenuItem fileOpen;
+    @FXML MenuItem fileQuit;
     
     private final JSVGCanvas svgCanvas;
     private RunnableQueue queue;
@@ -65,9 +70,6 @@ public class MainPane extends StackPane {
                 queue = svgCanvas.getUpdateManager().getUpdateRunnableQueue();
                 Document doc = svgCanvas.getSVGDocument();
                 designs = doc.getElementById("designs");
-                JEFFormat jef = new JEFFormat();
-                Design design = jef.readJEF();
-                renderDesign(design);
             }
         });
         URL url = getClass().getResource("/com/woodcomputing/bobbin/controller/template.svg");
@@ -75,6 +77,20 @@ public class MainPane extends StackPane {
         svgCanvas.setURI(template);
         SwingUtilities.invokeLater(() -> {
             swingNode.setContent(svgCanvas);
+        });
+        
+        fileOpen.setOnAction((event) -> {
+            FileChooser chooser = new FileChooser();
+            chooser.setTitle("Open Design File");
+            File selectedFile = chooser.showOpenDialog(this.getScene().getWindow());
+            if(selectedFile != null) {
+                Design design = JEFFormat.load(selectedFile);
+                renderDesign(design);
+            }
+        });
+        
+        fileQuit.setOnAction((event) -> {
+            System.exit(0);
         });
     }
     
