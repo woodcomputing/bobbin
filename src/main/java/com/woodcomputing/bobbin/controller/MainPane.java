@@ -7,7 +7,6 @@ package com.woodcomputing.bobbin.controller;
 
 import com.google.inject.Inject;
 import com.woodcomputing.bobbin.format.BobbinFormat;
-import com.woodcomputing.bobbin.format.jef.JEFFormat;
 import com.woodcomputing.bobbin.model.Design;
 import com.woodcomputing.bobbin.model.Stitch;
 import com.woodcomputing.bobbin.model.StitchGroup;
@@ -15,8 +14,11 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import javafx.embed.swing.SwingNode;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.StackPane;
 import javafx.stage.FileChooser;
@@ -39,13 +41,16 @@ import org.w3c.dom.Element;
 @Log4j2
 public class MainPane extends StackPane {
     
-    @FXML SwingNode swingNode;
-    @FXML MenuItem fileOpen;
-    @FXML MenuItem fileQuit;
+    @FXML private SwingNode swingNode;
+    @FXML private MenuItem fileOpen;
+    @FXML private MenuItem fileQuit;
+    @FXML private Button gridButton;
     
     private final JSVGCanvas svgCanvas;
     private RunnableQueue queue;
     private Element designs;
+    private Element gridMarker;
+    private Element originMarker;
     
     @Inject
     public MainPane(JSVGCanvas svgCanvas) {
@@ -71,6 +76,8 @@ public class MainPane extends StackPane {
                 queue = svgCanvas.getUpdateManager().getUpdateRunnableQueue();
                 Document doc = svgCanvas.getSVGDocument();
                 designs = doc.getElementById("designs");
+                gridMarker = doc.getElementById("gridMarker");
+                originMarker = doc.getElementById("originMarker");
             }
         });
         URL url = getClass().getResource("/com/woodcomputing/bobbin/controller/template.svg");
@@ -92,6 +99,19 @@ public class MainPane extends StackPane {
         
         fileQuit.setOnAction((event) -> {
             System.exit(0);
+        });
+        
+        gridButton.setOnAction((ActionEvent event) -> {
+            queue.invokeLater(() -> {
+                String display = originMarker.getAttributeNS(null, "display");
+                if (display.isEmpty()) {
+                    originMarker.setAttributeNS(null, "display", "none");
+                    gridMarker.setAttributeNS(null, "display", "none");
+                } else {
+                    originMarker.removeAttributeNS(null, "display");
+                    gridMarker.removeAttributeNS(null, "display");
+                }
+            });
         });
     }
     

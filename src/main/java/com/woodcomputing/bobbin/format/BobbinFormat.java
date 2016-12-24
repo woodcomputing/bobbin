@@ -5,7 +5,6 @@
  */
 package com.woodcomputing.bobbin.format;
 
-import com.woodcomputing.bobbin.format.jef.JEFFormat;
 import com.woodcomputing.bobbin.model.Design;
 import java.io.File;
 import java.util.HashMap;
@@ -23,6 +22,7 @@ public abstract class BobbinFormat {
     private  static final Map<String, Class<? extends BobbinFormat>> FormatMap = new HashMap<>();
     static {
         FormatMap.put("jef", JEFFormat.class);
+        FormatMap.put("pes", PESFormat.class);
     }
     
     public abstract Design load(File file);

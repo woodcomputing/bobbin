@@ -12,7 +12,7 @@
     </defs>
 
 
-    <rect x="-2400" y="-1600" width="4800" height="3200" fill="url(#grid)" />
+    <rect id="gridMarker" x="-2400" y="-1600" width="4800" height="3200" fill="url(#grid)" />
     <path id="originMarker" d="M -2400 0 4800 0 M 0 -1600 0 3200" stroke="black" stroke-width=".8"/>
     <g id="designs" />
 </svg>

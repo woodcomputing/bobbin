@@ -3,10 +3,9 @@
  * Copyright 2016 Jonathan Wood
  * Licensed under the Apache License, Version 2.0
  */
-package com.woodcomputing.bobbin.format.jef;
+package com.woodcomputing.bobbin.format;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.woodcomputing.bobbin.format.BobbinFormat;
 import com.woodcomputing.bobbin.model.Design;
 import com.woodcomputing.bobbin.model.Stitch;
 import com.woodcomputing.bobbin.model.StitchGroup;

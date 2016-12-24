@@ -1,0 +1,22 @@
+/*
+ * Bobbin
+ * Copyright 2016 Jonathan Wood
+ * Licensed under the Apache License, Version 2.0
+ */
+
+/*
+ *
+ * @author Jonathan Wood
+ * 
+ */
+
+.glyph-button {
+    -fx-background-color: transparent;
+    -fx-translate-y: -2;
+}
+.glyph-button:hover .fa {
+    -fx-text-fill: #2e81c4;        
+}
+.glyph_button:armed .fa {
+    -fx-text-fill: #de232c;
+}
